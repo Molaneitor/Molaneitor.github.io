@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Paleta "oscuro ejecutivo" */
+  --color-bg: #0d0f12;
+  --color-surface: #14171b;
+  --color-surface-2: #1b1f24;
+  --color-border: #262b31;
+  --color-text: #f4f4f5;
+  --color-text-muted: #9ba1a8;
+  --color-accent: #b3122e;
+  --color-accent-soft: #e5233f;
+  --color-accent-dim: rgba(179, 18, 46, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.accent-gradient-text {
+  background: linear-gradient(90deg, var(--color-accent-soft), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-accent-soft);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--color-border);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.section-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-soft);
+  font-weight: 600;
+}
