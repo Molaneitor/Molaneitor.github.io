@@ -1,7 +1,7 @@
 # Portafolio personal — Juan David Molano Sarmiento
 
 Página web personal construida con **React + Vite + TailwindCSS**, pensada como carta de presentación
-profesional orientada a roles de **Data Analyst / BI Developer**.
+profesional orientada a roles de **Data Scientist / BI Developer**.
 
 ## Tecnologías
 
