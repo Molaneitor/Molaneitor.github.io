@@ -21,11 +21,11 @@ export const projects = [
   {
     title: "Sitio web corporativo — Tienda Gym",
     description:
-      "Diseño y desarrollo del sitio web de la empresa en WordPress (constructor Divi), incluyendo checkout con WooCommerce e integración de pago a cuotas con Addi.",
-    tags: ["WordPress", "Divi", "WooCommerce"],
-    repo: null,
-    live: null,
-    featured: false,
+      "Diseño y desarrollo completo del sitio web de la empresa (WordPress + Divi + WooCommerce). Construí un cotizador de autoservicio a medida (arrastrar y soltar productos, buscador en vivo con la Store API, generación de PDF/Excel y envío por WhatsApp) que reemplazó cotizaciones manuales del equipo de ventas, además del checkout con múltiples medios de pago (Mercado Pago, PSE, tarjeta, Addi).",
+    tags: ["WordPress", "Divi", "WooCommerce", "JavaScript", "Addi"],
+    repo: "https://github.com/Molaneitor/TiendaGym-Website",
+    live: "https://tiendagym.com/",
+    featured: true,
   },
   {
     title: "Reportes SGI automatizados",
