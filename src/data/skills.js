@@ -1,26 +1,26 @@
 export const skillGroups = [
   {
-    title: "Datos & BI",
-    items: ["SQL", "SQL Server", "Power BI", "ETL", "Excel avanzado"],
+    title: { es: "Datos & BI", en: "Data & BI" },
+    items: ["SQL", "SQL Server", "Power BI", "ETL", { es: "Excel avanzado", en: "Advanced Excel" }],
   },
   {
-    title: "Lenguajes de programación",
+    title: { es: "Lenguajes de programación", en: "Programming languages" },
     items: ["Python", "Java", "JavaScript", "C++", "R"],
   },
   {
-    title: "Desarrollo web",
+    title: { es: "Desarrollo web", en: "Web development" },
     items: ["HTML", "CSS", ".NET", "Visual Studio"],
   },
   {
-    title: "Automatización & Sistemas",
-    items: ["Automatización de procesos", "Linux", "Ansible"],
+    title: { es: "Automatización & Sistemas", en: "Automation & Systems" },
+    items: [{ es: "Automatización de procesos", en: "Process automation" }, "Linux", "Ansible"],
   },
 ];
 
 export const softSkills = [
-  "Compromiso",
-  "Trabajo en equipo e individual",
-  "Actitud positiva",
-  "Pensamiento crítico",
-  "Toma de decisiones",
+  { es: "Compromiso", en: "Commitment" },
+  { es: "Trabajo en equipo e individual", en: "Team and individual work" },
+  { es: "Actitud positiva", en: "Positive attitude" },
+  { es: "Pensamiento crítico", en: "Critical thinking" },
+  { es: "Toma de decisiones", en: "Decision-making" },
 ];

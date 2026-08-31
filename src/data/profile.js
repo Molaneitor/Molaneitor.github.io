@@ -21,6 +21,6 @@ export const profile = {
 };
 
 export const languages = [
-  { name: "Español", level: "Nativo", levelPct: 100 },
-  { name: "Inglés", level: "Avanzado", levelPct: 80 },
+  { name: { es: "Español", en: "Spanish" }, level: { es: "Nativo", en: "Native" }, levelPct: 100 },
+  { name: { es: "Inglés", en: "English" }, level: { es: "Avanzado", en: "Advanced" }, levelPct: 80 },
 ];

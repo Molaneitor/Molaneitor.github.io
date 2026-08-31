@@ -1,17 +1,21 @@
 import { profile } from "../data/profile";
+import { ui } from "../data/translations";
+import { useLanguage } from "../context/LanguageContext";
 import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope, FaFileDownload } from "react-icons/fa";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section id="inicio" className="relative pt-36 pb-24 overflow-hidden">
-      {/* glow decorativo */}
+      {/* decorative glow */}
       <div
         className="pointer-events-none absolute -top-40 right-0 w-[36rem] h-[36rem] rounded-full opacity-20 blur-3xl"
         style={{ background: "radial-gradient(circle, var(--color-accent) 0%, transparent 70%)" }}
       />
 
       <div className="section-container relative">
-        <p className="section-eyebrow mb-4">Hola, soy</p>
+        <p className="section-eyebrow mb-4">{t(ui.hero.eyebrow)}</p>
         <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight max-w-3xl">
           {profile.name}
         </h1>
@@ -20,15 +24,15 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 max-w-2xl text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
-          {profile.summary.es}
+          {t(profile.summary)}
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a href={profile.cv.es} download className="btn-primary">
-            <FaFileDownload /> CV en Español
+            <FaFileDownload /> {t(ui.hero.cvEs)}
           </a>
           <a href={profile.cv.en} download className="btn-secondary">
-            <FaFileDownload /> CV in English
+            <FaFileDownload /> {t(ui.hero.cvEn)}
           </a>
         </div>
 
@@ -42,7 +46,7 @@ export default function Hero() {
           <a href={profile.social.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="hover:text-[var(--color-accent-soft)] transition-colors">
             <FaWhatsapp />
           </a>
-          <a href={profile.social.email} aria-label="Correo" className="hover:text-[var(--color-accent-soft)] transition-colors">
+          <a href={profile.social.email} aria-label="Email" className="hover:text-[var(--color-accent-soft)] transition-colors">
             <FaEnvelope />
           </a>
         </div>

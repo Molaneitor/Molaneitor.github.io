@@ -1,17 +1,34 @@
 import { useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import { ui } from "../data/translations";
 
 const links = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#sobre-mi", label: "Sobre mí" },
-  { href: "#habilidades", label: "Habilidades" },
-  { href: "#experiencia", label: "Experiencia" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#inicio", label: ui.nav.home },
+  { href: "#sobre-mi", label: ui.nav.about },
+  { href: "#habilidades", label: ui.nav.skills },
+  { href: "#experiencia", label: ui.nav.experience },
+  { href: "#proyectos", label: ui.nav.projects },
+  { href: "#contacto", label: ui.nav.contact },
 ];
+
+function LanguageToggle({ className = "" }) {
+  const { lang, toggleLang, t } = useLanguage();
+  return (
+    <button
+      onClick={toggleLang}
+      title={t(ui.navbar.switchTo)}
+      aria-label={t(ui.navbar.switchTo)}
+      className={`text-xs font-semibold tracking-wide px-2.5 py-1.5 rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-white hover:border-[var(--color-accent-soft)] transition-colors ${className}`}
+    >
+      {lang === "en" ? "ES" : "EN"}
+    </button>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -34,25 +51,32 @@ export default function Navbar() {
           {links.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="hover:text-white transition-colors">
-                {link.label}
+                {t(link.label)}
               </a>
             </li>
           ))}
         </ul>
 
-        <button
-          className="md:hidden text-white p-2"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Abrir menú"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-            )}
-          </svg>
-        </button>
+        <div className="hidden md:block">
+          <LanguageToggle />
+        </div>
+
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageToggle />
+          <button
+            className="text-white p-2"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={t(ui.navbar.openMenu)}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {open ? (
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -64,7 +88,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="block py-2 hover:text-white transition-colors"
               >
-                {link.label}
+                {t(link.label)}
               </a>
             </li>
           ))}

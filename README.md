@@ -1,39 +1,42 @@
-# Portafolio personal — Juan David Molano Sarmiento
+# Personal Portfolio — Juan David Molano Sarmiento
 
-Página web personal construida con **React + Vite + TailwindCSS**, pensada como carta de presentación
-profesional orientada a roles de **Data Scientist / BI Developer**.
+Personal website built with **React + Vite + TailwindCSS**, designed as a professional
+introduction geared toward **Data Analyst / BI Developer** roles. Available in English and
+Spanish via a language switcher in the navbar.
 
-## Tecnologías
+## Tech stack
 
 - React 19 + Vite
 - TailwindCSS v4
 - react-icons
 
-## Desarrollo local
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build de producción
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Despliegue en GitHub Pages
+## Deploying to GitHub Pages
 
-Este repo incluye un workflow (`.github/workflows/deploy.yml`) que compila el sitio y lo publica
-automáticamente en GitHub Pages cada vez que se hace push a `main`. Para activarlo:
+This repo includes a workflow (`.github/workflows/deploy.yml`) that builds the site and
+publishes it automatically to GitHub Pages on every push to `main`. To enable it:
 
-1. Sube este proyecto a un repositorio llamado `molaneitor.github.io` (o el nombre que prefieras).
-2. En GitHub, ve a **Settings → Pages** y selecciona **Source: GitHub Actions**.
-3. Haz push a `main` — la Action se encarga del resto.
+1. Push this project to a repository named `molaneitor.github.io` (or whatever name you prefer).
+2. On GitHub, go to **Settings → Pages** and set **Source: GitHub Actions**.
+3. Push to `main` — the Action takes care of the rest.
 
-## Contenido
+## Content
 
-Toda la información (perfil, experiencia, habilidades, proyectos) vive en `src/data/*.js`,
-separada de los componentes visuales en `src/components/`, para poder actualizarla fácilmente
-sin tocar el diseño.
+All the content (profile, experience, skills, projects) lives in `src/data/*.js`, separate
+from the visual components in `src/components/`, so it can be updated easily without touching
+the design. Translatable fields are stored as `{ es, en }` objects and picked at render time
+by the `useLanguage()` hook (`src/context/LanguageContext.jsx`); static UI copy (nav labels,
+section headings, buttons) lives in `src/data/translations.js`.
