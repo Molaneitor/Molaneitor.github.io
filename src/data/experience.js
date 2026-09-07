@@ -25,7 +25,7 @@ export const experience = [
     ],
   },
   {
-    role: { es: "Asesor Comercial y Analista de Datos", en: "Sales Advisor & Data Analyst" },
+    role: { es: "Asesor Comercial y Científico de Datos", en: "Sales Advisor & Data Scientist" },
     company: "Tienda Gym",
     location: "Bogotá D.C",
     period: { es: "Enero 2022 – Actualidad", en: "January 2022 – Present" },

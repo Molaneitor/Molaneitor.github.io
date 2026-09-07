@@ -1,7 +1,7 @@
 # Personal Portfolio — Juan David Molano Sarmiento
 
 Personal website built with **React + Vite + TailwindCSS**, designed as a professional
-introduction geared toward **Data Analyst / BI Developer** roles. Available in English and
+introduction geared toward **Data Scientist / BI Developer** roles. Available in English and
 Spanish via a language switcher in the navbar.
 
 ## Tech stack

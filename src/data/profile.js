@@ -1,6 +1,6 @@
 export const profile = {
   name: "Juan David Molano Sarmiento",
-  roles: ["Data Analyst", "BI Developer", "Systems Engineer"],
+  roles: ["Data Scientist", "BI Developer", "Systems Engineer"],
   location: "Bogotá D.C, Colombia",
   phone: "+57 317 793 8858",
   email: "jdmolanos501@gmail.com",

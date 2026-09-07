@@ -59,8 +59,8 @@ export const ui = {
       en: "Let's talk about your next data project",
     },
     subtitle: {
-      es: "Estoy abierto a oportunidades como Data Analyst, BI Developer o roles afines. Escríbeme por cualquiera de estos medios.",
-      en: "I'm open to opportunities as a Data Analyst, BI Developer, or related roles. Reach out through any of these channels.",
+      es: "Estoy abierto a oportunidades como Data Scientist, BI Developer o roles afines. Escríbeme por cualquiera de estos medios.",
+      en: "I'm open to opportunities as a Data Scientist, BI Developer, or related roles. Reach out through any of these channels.",
     },
   },
   footer: {
