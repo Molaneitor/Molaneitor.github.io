@@ -1,42 +1,36 @@
 # Personal Portfolio — Juan David Molano Sarmiento
 
-Personal website built with **React + Vite + TailwindCSS**, designed as a professional
-introduction geared toward **Data Scientist / BI Developer** roles. Available in English and
-Spanish via a language switcher in the navbar.
+Personal website built as **static HTML and CSS** (no JavaScript, no build step), designed as a
+professional introduction geared toward **Data Scientist / BI Developer** roles. Available in
+English (`/`) and Spanish (`/es/`), linked to each other with `hreflang`.
 
-## Tech stack
+## Structure
 
-- React 19 + Vite
-- TailwindCSS v4
-- react-icons
+- `site/index.html`: English page
+- `site/es/index.html`: Spanish page
+- `site/css/`: `tokens.css` (colours, type, spacing), `base.css` and `site.css`
+- `site/cv/`: the two resume PDFs, served at `/cv/...`
+- `site/img/`, `site/og.png`, `site/favicon.svg`, `site/apple-touch-icon.png`
 
-## Local development
+## Local preview
 
-```bash
-npm install
-npm run dev
-```
-
-## Production build
+Any static server pointed at `site/` works, for example:
 
 ```bash
-npm run build
-npm run preview
+py -m http.server 4173 --directory site
 ```
+
+Then open http://localhost:4173/ and http://localhost:4173/es/.
 
 ## Deploying to GitHub Pages
 
-This repo includes a workflow (`.github/workflows/deploy.yml`) that builds the site and
-publishes it automatically to GitHub Pages on every push to `main`. To enable it:
-
-1. Push this project to a repository named `molaneitor.github.io` (or whatever name you prefer).
-2. On GitHub, go to **Settings → Pages** and set **Source: GitHub Actions**.
-3. Push to `main` — the Action takes care of the rest.
+The workflow in `.github/workflows/deploy.yml` publishes the `site/` folder to GitHub Pages
+on every push to `main` (Settings → Pages → Source: GitHub Actions). There is nothing to build.
 
 ## Content
 
-All the content (profile, experience, skills, projects) lives in `src/data/*.js`, separate
-from the visual components in `src/components/`, so it can be updated easily without touching
-the design. Translatable fields are stored as `{ es, en }` objects and picked at render time
-by the `useLanguage()` hook (`src/context/LanguageContext.jsx`); static UI copy (nav labels,
-section headings, buttons) lives in `src/data/translations.js`.
+The content lives directly in the two HTML files; when you change a text, change it in both
+`site/index.html` and `site/es/index.html`.
+
+The previous React + Vite version (`src/`, `index.html`, `vite.config.js`, `package.json`) is
+still in the repository but is no longer published.
